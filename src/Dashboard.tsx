@@ -1,26 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { withStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import Badge from '@material-ui/core/Badge';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
-import SimpleLineChart from './SimpleLineChart';
-import SimpleTable from './SimpleTable';
+import React             from 'react'                                        ;   
+import PropTypes         from 'prop-types'                                   ;   
+import classNames        from 'classnames'                                   ;   
+import                   {    withStyles, StyleRulesCallback, createStyles, WithStyles } from '@material-ui/core/styles' ;
+import                   {    mainListItems, secondaryListItems }            from './listItems'              ;
+import CssBaseline       from '@material-ui/core/CssBaseline'                ;   
+import Drawer            from '@material-ui/core/Drawer'                     ;   
+import AppBar            from '@material-ui/core/AppBar'                     ;   
+import Toolbar           from '@material-ui/core/Toolbar'                    ;   
+import List              from '@material-ui/core/List'                       ;   
+import Typography        from '@material-ui/core/Typography'                 ;   
+import Divider           from '@material-ui/core/Divider'                    ;   
+import IconButton        from '@material-ui/core/IconButton'                 ;   
+import Badge             from '@material-ui/core/Badge'                      ;   
+import MenuIcon          from '@material-ui/icons/Menu'                      ;   
+import ChevronLeftIcon   from '@material-ui/icons/ChevronLeft'               ;   
+import NotificationsIcon from '@material-ui/icons/Notifications'             ;   
+import { Paper } from '@material-ui/core';
 
 const drawerWidth = 240;
 
-const styles = theme => ({
+const styles = theme => createStyles({
   root: {
     display: 'flex',
   },
@@ -28,30 +27,30 @@ const styles = theme => ({
     paddingRight: 24, // keep right padding when drawer closed
   },
   toolbarIcon: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: '0 8px',
+    display        : 'flex'     ,
+    alignItems     : 'center'   ,
+    justifyContent : 'flex-end' ,
+    padding        : '0 8px'    ,
     ...theme.mixins.toolbar,
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
+      easing   : theme.transitions.easing.sharp           ,
+      duration : theme.transitions.duration.leavingScreen ,
     }),
   },
   appBarShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft : drawerWidth                     ,
+    width      : `calc(100% - ${drawerWidth}px)` ,
     transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
+      easing   : theme.transitions.easing.sharp            ,
+      duration : theme.transitions.duration.enteringScreen ,
     }),
   },
   menuButton: {
-    marginLeft: 12,
-    marginRight: 36,
+    marginLeft  : 12 ,
+    marginRight : 36 ,
   },
   menuButtonHidden: {
     display: 'none',
@@ -60,31 +59,31 @@ const styles = theme => ({
     flexGrow: 1,
   },
   drawerPaper: {
-    position: 'relative',
-    whiteSpace: 'nowrap',
-    width: drawerWidth,
+    position   : 'relative'  ,
+    whiteSpace : 'nowrap'    ,
+    width      : drawerWidth ,
     transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
+      easing   : theme.transitions.easing.sharp            ,
+      duration : theme.transitions.duration.enteringScreen ,
     }),
   },
   drawerPaperClose: {
     overflowX: 'hidden',
     transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
+      easing   : theme.transitions.easing.sharp           ,
+      duration : theme.transitions.duration.leavingScreen ,
     }),
-    width: theme.spacing.unit * 7,
+    width: theme.spacing.unit * 0,
     [theme.breakpoints.up('sm')]: {
-      width: theme.spacing.unit * 9,
+      width: theme.spacing.unit * 0,
     },
   },
   appBarSpacer: theme.mixins.toolbar,
   content: {
-    flexGrow: 1,
-    padding: theme.spacing.unit * 3,
-    height: '100vh',
-    overflow: 'auto',
+    flexGrow : 1                      ,
+    padding  : theme.spacing.unit * 3 ,
+    height   : '100vh'                ,
+    overflow : 'auto'                 ,
   },
   chartContainer: {
     marginLeft: -22,
@@ -97,7 +96,11 @@ const styles = theme => ({
   },
 });
 
-class Dashboard extends React.Component {
+interface Props extends WithStyles<typeof styles> {
+
+}
+
+export default withStyles(styles)(class Dashboard extends React.Component<Props> {
   state = {
     open: true,
   };
@@ -140,7 +143,7 @@ class Dashboard extends React.Component {
                 noWrap
                 className={classes.title}
               >
-                Dashboard
+                <em>Shadow-Flux</em>
               </Typography>
               <IconButton color="inherit">
                 <Badge badgeContent={4} color="secondary">
@@ -163,32 +166,23 @@ class Dashboard extends React.Component {
             </div>
             <Divider />
             <List>{mainListItems}</List>
-            <Divider />
-            <List>{secondaryListItems}</List>
           </Drawer>
           <main className={classes.content}>
             <div className={classes.appBarSpacer} />
-            <Typography variant="h4" gutterBottom component="h2">
-              Orders
+            <Typography variant="h2" gutterBottom>
+              Getting Started
             </Typography>
-            <Typography component="div" className={classes.chartContainer}>
-              <SimpleLineChart />
-            </Typography>
-            <Typography variant="h4" gutterBottom component="h2">
-              Products
+            <Typography variant="subtitle1" gutterBottom>
+            Shadow-Flux is an implementation of Facebook's Flux design pattern. This library is not a Facebook product, but offers an implementation in Typescript. This library is offered under MIT license.
+            <br />
+            <br />
+            Happy coding: -)
             </Typography>
             <div className={classes.tableContainer}>
-              <SimpleTable />
             </div>
           </main>
         </div>
       </React.Fragment>
     );
   }
-}
-
-Dashboard.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(Dashboard);
+});
