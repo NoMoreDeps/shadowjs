@@ -2,7 +2,7 @@ import React             from 'react'                                        ;
 import PropTypes         from 'prop-types'                                   ;   
 import classNames        from 'classnames'                                   ;   
 import                   {    withStyles, StyleRulesCallback, createStyles, WithStyles } from '@material-ui/core/styles' ;
-import                   {    mainListItems, secondaryListItems }            from './listItems'              ;
+import                   {    mainListItems }            from './listItems'              ;
 import CssBaseline       from '@material-ui/core/CssBaseline'                ;   
 import Drawer            from '@material-ui/core/Drawer'                     ;   
 import AppBar            from '@material-ui/core/AppBar'                     ;   
@@ -17,7 +17,16 @@ import ChevronLeftIcon   from '@material-ui/icons/ChevronLeft'               ;
 import NotificationsIcon from '@material-ui/icons/Notifications'             ;   
 import { Paper } from '@material-ui/core';
 
+declare var Prism: any;
+
 const drawerWidth = 240;
+
+const sample = `
+export default class Test() {
+  constructor() {
+    
+  }
+}`;
 
 const styles = theme => createStyles({
   root: {
@@ -113,6 +122,10 @@ export default withStyles(styles)(class Dashboard extends React.Component<Props>
     this.setState({ open: false });
   };
 
+  componentDidMount() {
+    Prism.highlightAll()
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -179,6 +192,7 @@ export default withStyles(styles)(class Dashboard extends React.Component<Props>
             Happy coding: -)
             </Typography>
             <div className={classes.tableContainer}>
+              <pre><code className="language-typescript">sqdqsqsd</code></pre>
             </div>
           </main>
         </div>
