@@ -10,32 +10,36 @@ import BarChartIcon     from '@material-ui/icons/BarChart'     ;
 import LayersIcon       from '@material-ui/icons/Layers'       ;
 import AssignmentIcon   from '@material-ui/icons/Assignment'   ;
 import { Divider } from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
 
 export const mainListItems = (
   <div>
     <ListItem button>
-      <ListItemText primary="Getting Started" />
+      <NavLink to="/getting-started">
+        <ListItemText primary="Getting Started" />
+      </NavLink>
     </ListItem>
     <ListItem button>
-      <ListItemText primary="Installation" />
+      <NavLink to="/installation">
+        <ListItemText primary="Installation" />
+      </NavLink>
     </ListItem>
     
     <Divider />
-    <ListSubheader>Presentation</ListSubheader>
+    <ListSubheader>Presentation / Usage</ListSubheader>
     <ListItem button>
+    <NavLink to="/dispatcher">
       <ListItemText primary="Dispatcher" />
+    </NavLink>
+    </ListItem>
+    <ListItem button>
+      <ListItemText primary="Action" />
     </ListItem>
     <ListItem button>
       <ListItemText primary="Store" />
     </ListItem>
     <ListItem button>
-      <ListItemText primary="Action" />
-    </ListItem>
-
-    <Divider />
-    <ListSubheader>Usage</ListSubheader>
-    <ListItem button>
-      <ListItemText primary="Action" />
+      <ListItemText primary="View" />
     </ListItem>
 
     <Divider />

@@ -4,6 +4,7 @@ import Dashboard     from "./Dashboard"                      ;
 import blue          from '@material-ui/core/colors/blue'    ;   
 import purple          from '@material-ui/core/colors/purple'    ;   
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core" ;
+import { BrowserRouter } from "react-router-dom";
 
 const palette = {
   palette: {
@@ -17,6 +18,8 @@ const theme = createMuiTheme(palette);
 
 ReactDom.render(
   <MuiThemeProvider theme={theme}>
-    <Dashboard />
+    <BrowserRouter basename="www">
+      <Dashboard />
+    </BrowserRouter>
   </MuiThemeProvider>
 , document.querySelector("#app"));

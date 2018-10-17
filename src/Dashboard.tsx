@@ -16,17 +16,18 @@ import MenuIcon          from '@material-ui/icons/Menu'                      ;
 import ChevronLeftIcon   from '@material-ui/icons/ChevronLeft'               ;   
 import NotificationsIcon from '@material-ui/icons/Notifications'             ;   
 import { Paper } from '@material-ui/core';
-
-declare var Prism: any;
+import Prism from './controls/Prism';
+import Quote from "./controls/Quote";
+import { GettingStarted } from './pages/GettingStarted';
+import { Installation } from './pages/Installation';
+import { Route } from 'react-router';
+import { Dispatcher } from './pages/Dispatcher';
 
 const drawerWidth = 240;
 
-const sample = `
-export default class Test() {
-  constructor() {
-    
-  }
-}`;
+const sample: string = `export default class Test() {
+
+}`.toString();
 
 const styles = theme => createStyles({
   root: {
@@ -122,10 +123,6 @@ export default withStyles(styles)(class Dashboard extends React.Component<Props>
     this.setState({ open: false });
   };
 
-  componentDidMount() {
-    Prism.highlightAll()
-  }
-
   render() {
     const { classes } = this.props;
 
@@ -182,18 +179,10 @@ export default withStyles(styles)(class Dashboard extends React.Component<Props>
           </Drawer>
           <main className={classes.content}>
             <div className={classes.appBarSpacer} />
-            <Typography variant="h2" gutterBottom>
-              Getting Started
-            </Typography>
-            <Typography variant="subtitle1" gutterBottom>
-            Shadow-Flux is an implementation of Facebook's Flux design pattern. This library is not a Facebook product, but offers an implementation in Typescript. This library is offered under MIT license.
-            <br />
-            <br />
-            Happy coding: -)
-            </Typography>
-            <div className={classes.tableContainer}>
-              <pre><code className="language-typescript">sqdqsqsd</code></pre>
-            </div>
+            <Route exact path="/" component={GettingStarted} />
+            <Route exact path="/getting-started" component={GettingStarted} />
+            <Route exact path="/installation" component={Installation} />
+            <Route exact path="/dispatcher" component={Dispatcher} />
           </main>
         </div>
       </React.Fragment>
