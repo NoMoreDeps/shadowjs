@@ -17,12 +17,21 @@ export function Dispatcher() {
       <br />
       <br />
       The Dispatcher must distribute Actions in parallel, and manage dependencies between Stores.
-      <Prism language="bash">{`
-      import Dispatcher from "shadow-flux";
+      <Prism language="typescript" text={`
+        ${"import"} Dispatcher from 'shadow-flux/Dispatcher';
+        
+        const dispatcher = new Dispatcher();
+        `} />
+        <br />
+        The Dispatcher will register each Store in the scope. Each Store should have a unique TokenID that is used as a unique identifier.
+        You can set manually the token value when registering, or the dispatcher will set a Guid randomly.
+        <Prism language="typescript" text={`
+        // The Dispatcher will generate a valid Guid and apply it to the store
+        dispatcher.regsiter(myStore);
 
-      const dispatcher = new Dispatcher(); 
-      `}</Prism>
-       
+        // The Token is provided manually
+        dispatcher.register(myStore, "theStoreToken");
+        `} />
       </Typography>
     </React.Fragment>
   );

@@ -11,7 +11,7 @@ export function Installation() {
       </Typography>
       <Typography variant="subtitle1" gutterBottom>
         To install shadow-flux, use your favorite package manager :<br/>
-        <Prism language="bash">{`
+        <Prism language="bash" text={`
         #Using npm
         npm install -S shadow-flux
 
@@ -19,9 +19,10 @@ export function Installation() {
 
         #Using Yarn
         yarn add -S shadow-flux
-        `}</Prism>
+        `}/>
+        <br />
         If you prefer to get it from the source, you can clone the repo from github.
-        <Prism language="bash">{`
+        <Prism language="bash" text={`
         #Clone the repository
         git clone https://github.com/fskorzec/shadow-flux.git
 
@@ -33,13 +34,24 @@ export function Installation() {
 
         #Or with yarn
         yarn install
-        `}</Prism>
+        `}/>
+        <br />
         To compile just run
-        <Prism language="bash">{`
+        <Prism language="bash" text={`
         tsc
-        `}</Prism>
+        `} />
+        <br />
         To run the unit test suite and code coverage 
-        <Prism language="">{`
+        <Prism language="bash" text={`
+        # Npm
+        npm run test
+
+        #yarn
+        yarn test
+        `} />
+        <br />
+        The result should be like this
+        <Prism language="" text={`
         jest --coverage
         PASS  __tests__\Tests\App.ts
          Dispatcher tests
@@ -112,7 +124,7 @@ export function Installation() {
        Time:        5.643s
        Ran all test suites.
        Done in 6.66s.
-        `}</Prism>
+        `} />
       </Typography>
     </React.Fragment>
   );
