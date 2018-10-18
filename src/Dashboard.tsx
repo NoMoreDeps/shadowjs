@@ -22,6 +22,11 @@ import { GettingStarted } from './pages/GettingStarted';
 import { Installation } from './pages/Installation';
 import { Route } from 'react-router';
 import { Dispatcher } from './pages/Dispatcher';
+import { Action } from './pages/Action';
+import { ContextApi } from './pages/ContextApi';
+import { Debugger } from './pages/Debugger';
+import { Store } from './pages/Store';
+import { View } from './pages/View';
 
 const drawerWidth = 240;
 
@@ -183,6 +188,11 @@ export default withStyles(styles)(class Dashboard extends React.Component<Props>
             <Route exact path="/getting-started" component={GettingStarted} />
             <Route exact path="/installation" component={Installation} />
             <Route exact path="/dispatcher" component={Dispatcher} />
+            <Route exact path="/action" component={Action} />
+            <Route exact path="/context-api" component={ContextApi} />
+            <Route exact path="/debugging" component={Debugger} />
+            <Route exact path="/store" component={Store} />
+            <Route exact path="/view" component={View} />
           </main>
         </div>
       </React.Fragment>
