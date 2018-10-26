@@ -10,23 +10,23 @@ import Toolbar           from '@material-ui/core/Toolbar'                    ;
 import List              from '@material-ui/core/List'                       ;   
 import Typography        from '@material-ui/core/Typography'                 ;   
 import Divider           from '@material-ui/core/Divider'                    ;   
-import IconButton        from '@material-ui/core/IconButton'                 ;   
-import Badge             from '@material-ui/core/Badge'                      ;   
-import MenuIcon          from '@material-ui/icons/Menu'                      ;   
-import ChevronLeftIcon   from '@material-ui/icons/ChevronLeft'               ;   
-import NotificationsIcon from '@material-ui/icons/Notifications'             ;   
+import IconButton        from '@material-ui/core/IconButton'     ; 
+import Badge             from '@material-ui/core/Badge'          ; 
+import MenuIcon          from '@material-ui/icons/Menu'          ; 
+import ChevronLeftIcon   from '@material-ui/icons/ChevronLeft'   ; 
+import NotificationsIcon from '@material-ui/icons/Notifications' ; 
+import Prism             from './controls/Prism'                 ;
+import Quote             from "./controls/Quote"                 ;
 import { Paper } from '@material-ui/core';
-import Prism from './controls/Prism';
-import Quote from "./controls/Quote";
-import { GettingStarted } from './pages/GettingStarted';
-import { Installation } from './pages/Installation';
-import { Route } from 'react-router';
-import { Dispatcher } from './pages/Dispatcher';
-import { Action } from './pages/Action';
-import { ContextApi } from './pages/ContextApi';
-import { Debugger } from './pages/Debugger';
-import { Store } from './pages/Store';
-import { View } from './pages/View';
+import { GettingStarted } from './pages/GettingStarted' ;
+import { Installation }   from './pages/Installation'   ;
+import { Route }          from 'react-router'           ;
+import { Dispatcher }     from './pages/Dispatcher'     ;
+import { Action }         from './pages/Action'         ;
+import { ContextApi }     from './pages/ContextApi'     ;
+import { Debugger }       from './pages/Debugger'       ;
+import { Store }          from './pages/Store'          ;
+import { View }           from './pages/View'           ;
 
 const drawerWidth = 240;
 
@@ -160,11 +160,11 @@ export default withStyles(styles)(class Dashboard extends React.Component<Props>
               >
                 <em>Shadow-Flux</em>
               </Typography>
-              <IconButton color="inherit">
+              {/*<IconButton color="inherit">
                 <Badge badgeContent={4} color="secondary">
                   <NotificationsIcon />
                 </Badge>
-              </IconButton>
+                </IconButton>*/}
             </Toolbar>
           </AppBar>
           <Drawer
