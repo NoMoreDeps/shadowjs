@@ -4,6 +4,7 @@ import Quote from '../controls/Quote';
 import Prism from '../controls/Prism';
 
 export function Installation() {
+  try { document.getElementsByTagName("main")[0].scrollTop = 0; } catch {}
   return (
     <React.Fragment>
       <Typography variant="h4" gutterBottom>
