@@ -18,7 +18,7 @@ const theme = createMuiTheme(palette);
 
 ReactDom.render(
   <MuiThemeProvider theme={theme}>
-    <BrowserRouter basename="www">
+    <BrowserRouter basename="shadowjs">
       <Dashboard />
     </BrowserRouter>
   </MuiThemeProvider>
