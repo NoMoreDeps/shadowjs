@@ -1,5 +1,6 @@
 ﻿bin
 out
+dist
 node_modules
 .vs
 .vscode
