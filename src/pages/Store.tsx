@@ -105,6 +105,53 @@ export function Store() {
       By default emit without any parameter is equal to emit("updated"). In some specific cases if you want to notify view for a 
       partial update, you can pass antoher event name  so only the specific subscribers will be notified.
       </Typography>
+      <br/>
+      <br/>
+      <Typography variant="h6" gutterBottom>
+      Advanced programming
+      </Typography>
+      <Typography variant="subtitle1" gutterBottom>
+      Even if a switch / case is a simple way to understand how to use it. The BaseStore uses by default a
+      Strategy Pattern to handle the action process. So if you don't override the dispatchHandler method,
+      this pattern will be used to call a method in the class automatically based on the <Quote>payload.type</Quote> value.
+      <br/>
+      <br/>
+      <Prism language="typescript" text={`
+        ${`export`} type StrategyActionOne = {
+          type : "StrategyActionOne"
+        }
+
+        ${`export`} type StrategyActionTwo = {
+          type : "StrategyActionOne"
+        }
+
+        ${`export`} type Actions = StrategyActionOne | StrategyActionTwo;
+
+        ${`export`} type State = {
+          state: string;
+        };
+
+        ${`export`} class StrategyStore extends BaseStore<State> {
+          protected initState(): void {
+            this.nextState({ state : "" });
+          }
+
+          async actionStrategyActionOne(payload: TAction, success: () => void, error: (error: Error) => void, For: (...ids: string[]) => Promise<void>) : Promise<void | Error> {
+            this.nextState({state: "StrategyActionOne"});
+            this.emit();
+            success();
+          }
+
+          async actionStrategyActionTwo(payload: TAction, success: () => void, error: (error: Error) => void, For: (...ids: string[]) => Promise<void>) : Promise<void | Error> {
+            this.nextState({state: "StrategyActionTwo"});
+            this.emit();
+            success();
+          }
+
+        }`} />
+        So if you want to process an action type named {'<'}DoSomething{'>'} you can just implement un function 
+        named actionDoSomething with the same signature than the dispatchHandler method.
+      </Typography>
     </React.Fragment>
   );
 }
