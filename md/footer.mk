@@ -5,7 +5,7 @@ Copyright © 2020 NoMoreDeps.
 }}
 
 [marks ref:HeadCol2 variant:light]{{
-Built with `***Marks Site Generator***` and rendered on the fly with `***Marks***` itself (Yeah, it does :-))
+Built with `***Marks Site Generator***` and rendered on the fly with [`***Marks***`](https://marksjs.com)
 }}
 
 [bs-grid]{{
