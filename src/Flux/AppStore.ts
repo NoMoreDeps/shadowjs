@@ -62,6 +62,7 @@ const actions = {
     try {
       let segments  = payload.name.split("/");
       segments.shift();
+      segments.shift();
       segments        = segments.filter(_ => _.length) ;
       let pages       = this.getState().config?.pages  ;
       let item: TPage = null as unknown as TPage       ;
