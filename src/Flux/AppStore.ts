@@ -22,6 +22,7 @@ export type  TPage = {
 }
 
 export type TGlobalConfig = {
+  root: string;
   pages: TPage[];
 }
 
@@ -79,7 +80,7 @@ const actions = {
       }
       
       if (!item.md) {
-        const md = await (await fetch(`/shadowjs/md${item?.path !== "/" ? item?.path.replace("/shadowjs","") : "/index"}.mk`)).text();
+        const md = await (await fetch(`${global_config.root}/md${item?.path !== "/" ? item?.path : "/index"}.mk`)).text();
         item.md  = md;
       }
       
@@ -97,7 +98,7 @@ const actions = {
   async actionInit(this: TBaseStore<AppStoreState>) {
     if (this.getState().mainMenuitem) {
       if (!this.getState().mainMenuitem?.md) {
-        const md = await (await fetch(`/shadowjs/md${this.getState().mainMenuitem?.path !== "/" ? this.getState().mainMenuitem?.path.replace("/shadowjs","") : "/index"}.mk`)).text();
+        const md = await (await fetch(`${global_config.root}/md${this.getState().mainMenuitem?.path !== "/" ? this.getState().mainMenuitem?.path : "/index"}.mk`)).text();
         const newState = { ...this.getState() };
         newState.mainMenuitem!.md = md;
         this.nextState(newState);
@@ -119,8 +120,10 @@ export default registerStore({
 
     const pushState = window.history.pushState.bind(window.history);
     window.history.pushState = (...args) => {
-      pushState(...args);
       this.sendAction(AppStoreActions.nav(args[0].path));
+      args[2] = (global_config.root + args[2]).replace(global_config.root + global_config.root, global_config.root)
+      pushState(...args);
+      console.log("pushState", args)
     }
 
     console.log("Init", window.location.href);

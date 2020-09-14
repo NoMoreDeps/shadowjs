@@ -141,5 +141,5 @@ The `**CounterStore`** object will provide all actions methods generated from th
   @@BtnGetStarted2@@
 }}
 
-[marks fetch:/md/footer.mk classes:footer pElt:div]{{
+[marks fetch:/shadowjs/md/footer.mk classes:footer pElt:div]{{
 }}

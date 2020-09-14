@@ -13,7 +13,7 @@ declare var MarksR: MarksRenderer;
 export function App() {
   const refDom = React.useRef<HTMLDivElement>(document.createElement("div"));
   const [state, setState] = React.useState<AppStoreState>({
-    config       : { pages: [] } ,
+    config       : { pages: [], root: "" } ,
     subMenuItem  : {} as TPage   ,
     mainMenuitem : {} as TPage   ,
     template     : "Default"

@@ -38,7 +38,7 @@ const useStyles = makeStyles({
 export function TopMenu() {
   const classes           = useStyles() ;
   const [state, setState] = React.useState<AppStoreState>({
-    config       : { pages: [] } ,
+    config       : { pages: [] , root: ""} ,
     subMenuItem  : {} as TPage   ,
     mainMenuitem : {} as TPage   ,
     template     : "Default"
@@ -56,6 +56,7 @@ export function TopMenu() {
     return () => sub.off();
   }, []);
 
+  console.log("menu", state)
 
   for(let page of state!.config.pages) {
     if (!page.hidden) {
