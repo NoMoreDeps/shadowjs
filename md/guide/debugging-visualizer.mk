@@ -12,4 +12,4 @@ sFDebugger.setOn();
 
 Then you will be able to check data acrooss cycles.
 
-![Visualizer](/assets/vizu.png)
+![Visualizer](/shadowjs/assets/vizu.png)
