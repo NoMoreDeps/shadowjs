@@ -1,7 +1,6 @@
 const global_config = {
   pages: [
-    {name: "index", title: "Home", path: "/shadowjs"},
-    {name: "_index", title: "Home", path: "/", hidden: true},
+    {name: "index", title: "Home", path: "/"},
     {
       name: "guide", title: "Guide", path:"/guide", template: "rightenu",
       pages: [
