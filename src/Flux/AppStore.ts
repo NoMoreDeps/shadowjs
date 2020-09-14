@@ -79,7 +79,7 @@ const actions = {
       }
       
       if (!item.md) {
-        const md = await (await fetch(`/shadowjs/md${item?.path !== "/" ? item?.path : "/shadowjs/index"}.mk`)).text();
+        const md = await (await fetch(`/shadowjs/md${item?.path !== "/" ? item?.path : "/index"}.mk`)).text();
         item.md  = md;
       }
       
@@ -97,7 +97,7 @@ const actions = {
   async actionInit(this: TBaseStore<AppStoreState>) {
     if (this.getState().mainMenuitem) {
       if (!this.getState().mainMenuitem?.md) {
-        const md = await (await fetch(`/shadowjs/md${this.getState().mainMenuitem?.path !== "/" ? this.getState().mainMenuitem?.path : "/shadowjs/index"}.mk`)).text();
+        const md = await (await fetch(`/shadowjs/md${this.getState().mainMenuitem?.path !== "/" ? this.getState().mainMenuitem?.path : "/index"}.mk`)).text();
         const newState = { ...this.getState() };
         newState.mainMenuitem!.md = md;
         this.nextState(newState);
