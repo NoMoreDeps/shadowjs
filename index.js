@@ -7,7 +7,7 @@ const global_config = {
       pages: [
         {name: "introduction-installation" , title: "Installation" , path: "/guide/introduction-installation" , groupTitle: "Introduction" },
         {name: "introduction-overview"     , title: "Overview"     , path: "/guide/introduction-overview"     , groupTitle: "Introduction" },
-        {name: "introduction-breaking"     , title: "Breaking changes"     , path: "/shadowjs/guide/introduction-breaking"     , groupTitle: "Introduction" },
+        {name: "introduction-breaking"     , title: "Breaking changes"     , path: "/guide/introduction-breaking"     , groupTitle: "Introduction" },
        
         {name: "howto-overview"            , title: "Overview"     , path: "/guide/howto-overview"            , groupTitle: "Using it" },
         {name: "howto-store"               , title: "Store"        , path: "/guide/howto-store"               , groupTitle: "Using it" },
