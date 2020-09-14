@@ -79,7 +79,7 @@ const actions = {
       }
       
       if (!item.md) {
-        const md = await (await fetch(`/shadowjs/md${item?.path !== "/" ? item?.path : "/index"}.mk`)).text();
+        const md = await (await fetch(`/shadowjs/md${item?.path !== "/" ? item?.path : "/shadowjs/index"}.mk`)).text();
         item.md  = md;
       }
       
