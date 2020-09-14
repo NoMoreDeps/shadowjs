@@ -1,34 +1,34 @@
 const global_config = {
   pages: [
-    {name: "index", title: "Home", path: "/"},
+    {name: "index", title: "Home", path: "/shadowjs"},
     {
-      name: "guide", title: "Guide", path:"/guide", template: "rightenu",
+      name: "guide", title: "Guide", path:"/shadowjs/guide", template: "rightenu",
       pages: [
-        {name: "introduction-installation" , title: "Installation" , path: "/guide/introduction-installation" , groupTitle: "Introduction" },
-        {name: "introduction-overview"     , title: "Overview"     , path: "/guide/introduction-overview"     , groupTitle: "Introduction" },
-        {name: "introduction-breaking"     , title: "Breaking changes"     , path: "/guide/introduction-breaking"     , groupTitle: "Introduction" },
+        {name: "introduction-installation" , title: "Installation" , path: "/shadowjs/guide/introduction-installation" , groupTitle: "Introduction" },
+        {name: "introduction-overview"     , title: "Overview"     , path: "/shadowjsuide/introduction-overview"     , groupTitle: "Introduction" },
+        {name: "introduction-breaking"     , title: "Breaking changes"     , path: "/shadowjs/guide/introduction-breaking"     , groupTitle: "Introduction" },
        
-        {name: "howto-overview"            , title: "Overview"     , path: "/guide/howto-overview"            , groupTitle: "Using it" },
-        {name: "howto-store"               , title: "Store"        , path: "/guide/howto-store"               , groupTitle: "Using it" },
-        {name: "howto-actions"             , title: "Actions"      , path: "/guide/howto-actions"             , groupTitle: "Using it" },
-        {name: "howto-events"              , title: "Events"       , path: "/guide/howto-events"              , groupTitle: "Using it" },
-        {name: "howto-views"               , title: "Views"        , path: "/guide/howto-views"               , groupTitle: "Using it" },
+        {name: "howto-overview"            , title: "Overview"     , path: "/shadowjs/guide/howto-overview"            , groupTitle: "Using it" },
+        {name: "howto-store"               , title: "Store"        , path: "/shadowjs/guide/howto-store"               , groupTitle: "Using it" },
+        {name: "howto-actions"             , title: "Actions"      , path: "/shadowjs/guide/howto-actions"             , groupTitle: "Using it" },
+        {name: "howto-events"              , title: "Events"       , path: "/shadowjs/guide/howto-events"              , groupTitle: "Using it" },
+        {name: "howto-views"               , title: "Views"        , path: "/shadowjs/guide/howto-views"               , groupTitle: "Using it" },
     
-        {name: "advanced-overview"         , title: "Overview"     , path: "/guide/advanced-overview"         , groupTitle: "Low Level" },
-        {name: "advanced-dispatcher"       , title: "Dispatcher"   , path: "/guide/advanced-dispatcher"       , groupTitle: "Low Level" },
-        {name: "advanced-store"            , title: "Store"        , path: "/guide/advanced-store"            , groupTitle: "Low Level" },
-        {name: "advanced-action"           , title: "Action"       , path: "/guide/advanced-action"           , groupTitle: "Low Level" },
-        {name: "advanced-views"            , title: "Views"        , path: "/guide/advanced-views"            , groupTitle: "Low Level" },
+        {name: "advanced-overview"         , title: "Overview"     , path: "/shadowjs/guide/advanced-overview"         , groupTitle: "Low Level" },
+        {name: "advanced-dispatcher"       , title: "Dispatcher"   , path: "/shadowjs/guide/advanced-dispatcher"       , groupTitle: "Low Level" },
+        {name: "advanced-store"            , title: "Store"        , path: "/shadowjs/guide/advanced-store"            , groupTitle: "Low Level" },
+        {name: "advanced-action"           , title: "Action"       , path: "/shadowjs/guide/advanced-action"           , groupTitle: "Low Level" },
+        {name: "advanced-views"            , title: "Views"        , path: "/shadowjs/guide/advanced-views"            , groupTitle: "Low Level" },
     
-        {name: "debugging-visualizer"       , title: "Visualizer"   , path: "/guide/debugging-visualizer"      , groupTitle: "Debug" },
+        {name: "debugging-visualizer"       , title: "Visualizer"   , path: "/shadowjs/guide/debugging-visualizer"      , groupTitle: "Debug" },
 
-        {name: "tutorial-bookstore"        , title: "Bookstore"    , path: "/guide/tutorial-bookstore"        , groupTitle: "Tutorial" },
+        {name: "tutorial-bookstore"        , title: "Bookstore"    , path: "/shadowjs/guide/tutorial-bookstore"        , groupTitle: "Tutorial" },
         // {name: "tutorial-demo"             , title: "Demo"         , path: "/tutorial-demo"             , groupTitle: "Tutorial" },
 
       ]
     },
-    {name: "tutorial-demo" , title: "Demo" , path: "/tutorial-demo", hidden: true, template: "demo" },
-    {name: "about" , title: "About" , path: "/about"}
+    {name: "tutorial-demo" , title: "Demo" , path: "/shadowjs/tutorial-demo", hidden: true, template: "demo" },
+    {name: "about" , title: "About" , path: "/shadowjs/about"}
   ]
 };
 
