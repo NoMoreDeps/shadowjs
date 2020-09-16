@@ -7,7 +7,7 @@ This bookstore will allow you to visualize books, by category, and put them in y
 #### Data model
 To get started, here is a lite version of the data model :
 [marks classes:output]{{
-  [mermaid]{{
+  [mermaid xss:false]{{
   classDiagram
     class Book
     Book : Name     : string
