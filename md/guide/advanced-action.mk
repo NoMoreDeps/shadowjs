@@ -1,7 +1,7 @@
 ### Action
 An `**Action**` represents the way to formalize a request for a change of state of one or more `**Stores**`.
 
-An `**Action**` must at least have a field named `**"Type"**` of string type. Stores receive this action as a Payload, and apart from the Type field, the rest of the possible fields are completely free.
+An `**Action**` must at least have a field named `**<Type>**` of string type. Stores receive this action as a Payload, and apart from the Type field, the rest of the possible fields are completely free.
 A `**Store**` must display the different Actions available in order to facilitate the creation of Actions from `**Views**`.
 
 Here you can find the action type definition :
