@@ -6,15 +6,15 @@ This bookstore will allow you to visualize books, by category, and put them in y
 
 #### Data model
 To get started, here is a lite version of the data model :
-[marks classes:output]{{
+[marks xss:false classes:output]{{
   [mermaid xss:false]{{
   classDiagram
     class Book
-    Book : Name     : string
-    Book : Author   : string
-    Book : Picture  : string
-    Book : Year     : number
-    Book : Category : string
+    Book : Name     string
+    Book : Author   string
+    Book : Picture  string
+    Book : Year     number
+    Book : Category string
 
     class BookStore
 
@@ -22,8 +22,8 @@ To get started, here is a lite version of the data model :
       Prices: Array<Price>
 
     class Price
-      Price: discount: number
-      Price: price: number
+      Price: discount number
+      Price: price number
 
     class Cart
     
