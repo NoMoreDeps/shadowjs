@@ -7,7 +7,7 @@ The method prototype can be describe as follow :
 type TActionReturn = void | null | string | string[];
 
 async actionName(payload?: any) => TActionReturn;
-async actionName(payload?: any, For?: (...ids: string[])) => TActionReturn;
+async actionName(payload?: any, For?: (...ids: string[]) => Promise<void>) => TActionReturn;
 ```
 
 [marks classes:outputNoBg]{{
@@ -16,7 +16,7 @@ async actionName(payload?: any, For?: (...ids: string[])) => TActionReturn;
   The payload is an object containing all the information useful for the action to update its State.
 }}
 [marks classes:outputNoBg]{{
-  **For** : `**(...ids: string[])) => TActionReturn**`
+  **For** : `**(...ids: string[]) => Promise<void>**`
   ___
   This method can be used to ensure any other store will finish to process the payload before the current one will continue.
   Ex:
