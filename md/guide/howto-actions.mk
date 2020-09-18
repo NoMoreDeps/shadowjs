@@ -24,7 +24,7 @@ async actionName(payload?: any, For?: (...ids: string[]) => Promise<void>) => TA
   async getTravelDetail(payload: TTravel, For: TAwaitFor) {
     await For(priceStore.id);
     this.nextState({
-      ...payload,
+      ...payload,De
       price: priceStore.getState().prices[payload.travelId]
     });
   }
