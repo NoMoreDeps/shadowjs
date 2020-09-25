@@ -66,7 +66,7 @@ An **Action** can be triggered by a **View**, a **Store**, or any other source, 
 [marks classes:container]{{
 Given this simple store definition :  
 
-```typescript
+```typescript ::- xss:false
   // State type
 type CounterState = {
   counter: number;
