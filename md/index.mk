@@ -63,10 +63,10 @@ An **Action** can be triggered by a **View**, a **Store**, or any other source, 
   
 }}
 
-[marks classes:container]{{
+[marks classes:container xss:false]{{
 Given this simple store definition :  
 
-```typescript ::- xss:false
+```typescript
   // State type
 type CounterState = {
   counter: number;
